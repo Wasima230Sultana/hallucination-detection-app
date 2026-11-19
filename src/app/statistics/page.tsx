@@ -20,11 +20,37 @@ export const metadata: Metadata = {
 };
 
 const experiments = [
-  {
-    name: "Experiment A",
-    description: "Baseline model evaluation",
-    status: "Completed",
+ {
+  name: "Experiment A",
+  description:
+    "RAGTruth + HaluEval-General → HaluEval-Dialogue",
+  status: "Test Evaluated",
+
+  validation: {
+    accuracy: "75.77%",
+    precision: "69.65%",
+    recall: "66.50%",
+    f1: "68.04%",
+    rocAuc: "81.16%",
   },
+
+  test: {
+    accuracy: "49.91%",
+    precision: "50.34%",
+    recall: "1.50%",
+    f1: "2.91%",
+    rocAuc: "Not available",
+  },
+
+  confusionMatrix: {
+    tn: 4914,
+    fp: 74,
+    fn: 4933,
+    tp: 75,
+  },
+
+  bestCheckpoint: "checkpoint-6777",
+},
   {
     name: "Experiment B",
     description: "Transformer-based fine-tuning",
